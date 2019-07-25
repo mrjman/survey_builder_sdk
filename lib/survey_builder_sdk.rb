@@ -1,6 +1,24 @@
-require "survey_builder_sdk/version"
+require 'survey_builder_sdk/version'
+require 'survey_builder_sdk/util'
+require 'survey_builder_sdk/models/api_open_struct'
+require 'survey_builder_sdk/models/endpoint_response'
+require 'survey_builder_sdk/repositories/endpoint_repository'
+require 'survey_builder_sdk/repositories/participants_repository'
+require 'survey_builder_sdk/repositories/surveys_repository'
+require 'survey_builder_sdk/services/participants_service'
+require 'survey_builder_sdk/services/surveys_service'
+require 'survey_builder_sdk/api_client'
+require 'survey_builder_sdk/resources/response'
+require 'survey_builder_sdk/resources/request'
+require 'survey_builder_sdk/resources/batch'
+require 'survey_builder_sdk/resources/collection'
+require 'survey_builder_sdk/resources/operation'
+require 'survey_builder_sdk/resources/participant'
+require 'survey_builder_sdk/resources/survey'
+require 'survey_builder_sdk/resources/answer_set'
+require 'survey_builder_sdk/resources/answer_set_summary'
+require 'survey_builder_sdk/resources/resource'
+require 'survey_builder_sdk/errors'
 
-module SurveyBuilderSdk
-  class Error < StandardError; end
-  # Your code goes here...
+module SurveyBuilder
 end

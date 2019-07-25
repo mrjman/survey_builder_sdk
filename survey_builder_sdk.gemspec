@@ -5,7 +5,7 @@ require "survey_builder_sdk/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "survey_builder_sdk"
-  spec.version       = SurveyBuilderSdk::VERSION
+  spec.version       = SurveyBuilder::VERSION
   spec.authors       = ["Jesse"]
   spec.email         = ["jesse@mondorobot.com"]
 
