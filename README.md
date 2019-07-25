@@ -1,8 +1,8 @@
 # SurveyBuilderSdk
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/survey_builder_sdk`. To experiment with that code, run `bin/console` for an interactive prompt.
+Provides a library for connection to the Survey Builder API. Exposes a low level client api and high level resources.
 
-TODO: Delete this and the text above, and describe your gem
+To experiment with that code, run `bin/console` for an interactive prompt.
 
 ## Installation
 
@@ -22,7 +22,56 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Environment Variables
+By default the gem will look for the following environment variables:
+```
+SURVEY_BUILDER_API_ACCESS_ID
+SURVEY_BUILDER_API_SECRET
+SURVEY_BUILDER_API_URL
+```
+
+You can add these to your environment manually or with a library (ex. dotenv)
+
+### Low level API
+
+To get started create an api client and make a request:
+
+```
+# uses environment variables
+client = SurveyBuilder::ApiClient.new
+
+# explicit
+client = SurveyBuilder::ApiClient.new(access_id: 'access_id', secret: 'secret', url: 'url')
+
+# make api calls
+client.surveys.list_surveys
+client.participants.list_participants
+```
+
+### Resources
+
+Higher level resources allow for more idiomatic access to the api as well as lazy loading and batching.
+
+```
+# internally creates api client based on env params
+resource = SurveyBuilder::Resource.new
+
+# explicit
+client = SurveyBuilder::ApiClient.new(access_id: 'access_id', secret: 'secret', url: 'url')
+resource = SurveyBuilder::Resource.new(client: client)
+
+# retrieve surveys
+resource.surveys
+resource.surveys.map { |survey| survey.title }
+resource.survey('uuid-value')
+
+# retrieve participants
+resource.participants
+resource.participant('uuid-value')
+
+# retrieve answer sets
+resource.participant('uuid-value').answer_sets
+```
 
 ## Development
 

@@ -7,5 +7,17 @@
 /spec/reports/
 /tmp/
 
+
+Gemfile.lock
+
+# rvm files
+.ruby-version
+.ruby-gemset
+.rvmrc
+
 # rspec failure tracking
 .rspec_status
+
+# env files
+.env*
+!.env-example
