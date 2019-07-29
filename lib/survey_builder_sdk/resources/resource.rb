@@ -9,7 +9,7 @@ module SurveyBuilder
     def surveys(options = {})
       options = options.merge(
         method: :list_surveys,
-        resource_klass: Survey,
+        resource_klass: SurveySummary,
         service: :surveys
       )
       operation = Operation.new(client, options)
