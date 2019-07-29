@@ -10,5 +10,16 @@ require "survey_builder_sdk"
 # require "pry"
 # Pry.start
 
-require "irb"
-IRB.start(__FILE__)
+def run_with_irb
+  require 'irb'
+  IRB.start(__FILE__)
+end
+
+def run_with_pry
+  require 'pry'
+  Pry.start
+rescue LoadError
+  run_with_irb
+end
+
+run_with_pry
