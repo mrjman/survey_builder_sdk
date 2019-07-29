@@ -39,11 +39,13 @@ module SurveyBuilder
 
     # Attributes
     def created_at
-      retrieve_data(:created_at)
+      time_str = retrieve_data(:created_at)
+      Util.str_to_time(time_str)
     end
 
     def updated_at
-      retrieve_data(:updated_at)
+      time_str = retrieve_data(:updated_at)
+      Util.str_to_time(time_str)
     end
 
     def cloned_from_uuid

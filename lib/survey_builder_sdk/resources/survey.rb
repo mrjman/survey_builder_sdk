@@ -1,5 +1,3 @@
-require 'time'
-
 module SurveyBuilder
   class Survey
     attr_reader :client, :uuid
@@ -45,12 +43,12 @@ module SurveyBuilder
 
     def created_at
       time_str = retrieve_data(:created_at)
-      Time.parse(time_str) if time_str
+      Util.str_to_time(time_str)
     end
 
     def updated_at
       time_str = retrieve_data(:updated_at)
-      Time.parse(time_str) if time_str
+      Util.str_to_time(time_str)
     end
 
     def question_groups

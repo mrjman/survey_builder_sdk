@@ -32,6 +32,17 @@ module SurveyBuilder
     end
     alias reload load
 
+    # Attributes
+    def created_at
+      time_str = retrieve_data(:created_at)
+      Util.str_to_time(time_str)
+    end
+
+    def updated_at
+      time_str = retrieve_data(:updated_at)
+      Util.str_to_time(time_str)
+    end
+
     # Associations
     def answer_sets(options = {})
       options = options.merge(
@@ -44,7 +55,7 @@ module SurveyBuilder
       operation = SurveyBuilder::Operation.new(client, options)
       SurveyBuilder::Collection.new(operation)
     end
-    
+
     private
 
     def retrieve_data(key)

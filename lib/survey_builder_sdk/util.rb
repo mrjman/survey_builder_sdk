@@ -1,11 +1,12 @@
 require 'cgi'
+require 'time'
 
 module SurveyBuilder
   module Util
     class << self
       def array_wrap(object)
         if object.nil?
-        []
+          []
         elsif object.respond_to?(:to_ary)
           object.to_ary || [object]
         else
@@ -20,6 +21,10 @@ module SurveyBuilder
         end.compact
 
         query.sort!.join('&')
+      end
+
+      def str_to_time(value)
+        Time.parse(value) if value
       end
     end
   end
