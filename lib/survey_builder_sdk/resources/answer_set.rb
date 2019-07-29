@@ -66,7 +66,12 @@ module SurveyBuilder
     def cloned_from
       return if cloned_from_uuid.nil?
 
-      @cloned_from ||= AnswerSet.new(client: client, uuid: cloned_from_uuid, survey_uuid: @survey_uuid, participant_uuid: @participant_uuid)
+      @cloned_from ||= AnswerSet.new(
+        client: client,
+        uuid: cloned_from_uuid,
+        survey_uuid: @survey_uuid,
+        participant_uuid: @participant_uuid
+      )
     end
 
     private
