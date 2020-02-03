@@ -33,7 +33,7 @@ module SurveyBuilder
     end
 
     def prev_page?
-      !!meat&.next_page
+      !!meta&.prev_page
     end
 
     def last_page?
