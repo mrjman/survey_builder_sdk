@@ -20,4 +20,4 @@ Gemfile.lock
 
 # env files
 .env*
-!.env-example
+!.env.template
