@@ -46,7 +46,8 @@ module SurveyBuilder
       next_page_params = request.options.dup
       next_page_params[:page] = meta.next_page
 
-      Request.new(request.client, request.service, request.method, next_page_params).call
+      next_request = Request.new(request.client, request.service, request.method, next_page_params)
+      next_request.call
     end
 
     def __getobj__
