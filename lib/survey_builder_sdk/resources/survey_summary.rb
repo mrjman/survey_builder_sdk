@@ -9,29 +9,12 @@ module SurveyBuilder
     end
 
     def data
-      return @data if loaded?
-
-      load
       @data
     end
 
     def loaded?
       !@data.nil?
     end
-
-    def load
-      response = client.participants.find_participant(uuid)
-
-      if response.errors.nil?
-        @data = response
-      else
-        @data = nil
-        raise "unable to load participant #{uuid}"
-      end
-
-      self
-    end
-    alias reload load
 
     # Attributes
     def title
