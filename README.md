@@ -8,9 +8,7 @@ To run with dotenv support
 
 Install the dotenv gem:
 
-```
-gem install dotenv
-```
+    $ gem install dotenv
 
 Create a `.env` file with your values:
 
