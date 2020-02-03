@@ -4,6 +4,20 @@ Provides a library for connection to the Survey Builder API. Exposes a low level
 
 To experiment with that code, run `bin/console` for an interactive prompt.
 
+To run with dotenv support
+
+Install the dotenv gem:
+
+    $ gem install dotenv
+
+Create a `.env` file with your values:
+
+    $ cp .env.template .env
+
+And then execute:
+
+    $ dotenv bin/console
+
 ## Installation
 
 Add this line to your application's Gemfile:
