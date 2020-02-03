@@ -4,6 +4,22 @@ Provides a library for connection to the Survey Builder API. Exposes a low level
 
 To experiment with that code, run `bin/console` for an interactive prompt.
 
+To run with dotenv support
+
+Install the dotenv gem:
+
+```ruby
+gem 'dotenv'
+```
+
+Create a `.env` file with your values:
+
+    $ cp .env.template .env
+
+And then execute:
+
+    $ dotenv bin/console
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -76,16 +92,6 @@ resource.participant('uuid-value').answer_sets
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To run with dotenv support create a `.env` file and install the dotenv gem:
-
-```ruby
-gem 'dotenv'
-```
-
-And then execute:
-
-    $ dotenv bin/console
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
