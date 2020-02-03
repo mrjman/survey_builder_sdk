@@ -8,7 +8,7 @@ To run with dotenv support
 
 Install the dotenv gem:
 
-```ruby
+```
 gem install dotenv
 ```
 
